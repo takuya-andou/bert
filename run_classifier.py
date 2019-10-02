@@ -375,7 +375,7 @@ class ColaProcessor(DataProcessor):
           InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
     return examples
 
-class GelenalProcessor(DataProcessor):
+class GeneralProcessor(DataProcessor):
 
   def read_tsv(self, path):
     df = pd.read_csv(path, sep="\t")
@@ -827,7 +827,7 @@ def main(_):
       "mnli": MnliProcessor,
       "mrpc": MrpcProcessor,
       "xnli": XnliProcessor,
-      "general": GelenalProcessor
+      "general": GeneralProcessor
   }
 
   tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
